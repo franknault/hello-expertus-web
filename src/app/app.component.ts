@@ -8,7 +8,8 @@ import { ApiService } from './services/api.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'hello-expertus-web';
+  title = '';
+  langue = 'en';
 
   isDataLoaded: boolean = false;
 
@@ -22,7 +23,8 @@ export class AppComponent {
   }
 
   loadData() {
-    this.apiService.getMessage("en").subscribe(data => {
+    this.langue = this.apiService.getRandomLanguage();
+    this.apiService.getMessage(this.langue).subscribe(data => {
       console.log(data.value);
       this.title = data.value;
     }, err => {
