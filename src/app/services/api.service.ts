@@ -113,7 +113,7 @@ export class ApiService {
 
   prod: string = "https://hello-expertus-api.herokuapp.com/";
   dev: string = "http://localhost:8080/";
-  url = this.prod;
+  url = this.dev;
 
   constructor(
     private http: Http,
